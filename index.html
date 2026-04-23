@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify Central</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+  <div class="app-bg"></div>
+
+  <!-- ── HOME ── -->
+  <div class="screen visible" id="screen-home">
+    <div class="home-hero">
+      <div class="home-tag"><span class="home-tag-dot"></span>OUVERT — LAS VEGAS, NV</div>
+      <div class="home-title">SPOTIFY<br><span>CENTRAL</span></div>
+      <p class="home-desc">Le seul parc à thème au monde entièrement dédié à la musique. Cinq zones, douze montagnes russes, vingt-deux activités et cinq restaurants signatures dans le cœur de Las Vegas.</p>
+    </div>
+    <div class="home-cats">
+      <div class="cat-card" onclick="switchTab('events')">
+        <div class="cat-icon" style="background:#1a2e1a;">📅</div>
+        <div class="cat-title" style="color:#1DB954;">ÉVÉNEMENTS</div>
+        <div class="cat-desc">Concerts, soirées thématiques et spectacles à venir dans toutes les zones.</div>
+        <div class="cat-arrow">→</div>
+      </div>
+      <div class="cat-card" onclick="switchTab('deals')">
+        <div class="cat-icon" style="background:#1a1a00;">🏷️</div>
+        <div class="cat-title" style="color:#f0c040;">OFFRES</div>
+        <div class="cat-desc">Billets journée, abonnements d'été et extras pour améliorer votre visite.</div>
+        <div class="cat-arrow" style="color:#f0c040;">→</div>
+      </div>
+      <div class="cat-card" onclick="switchTab('map')">
+        <div class="cat-icon" style="background:#001a2e;">🗺️</div>
+        <div class="cat-title" style="color:#4da6ff;">PLAN DU PARC</div>
+        <div class="cat-desc">Explorez les 5 zones musicales, attractions, restaurants et services.</div>
+        <div class="cat-arrow" style="color:#4da6ff;">→</div>
+      </div>
+      <div class="cat-card green-card" onclick="switchTab('deals')">
+        <div class="cat-icon" style="background:#1DB954;">🎟️</div>
+        <div class="cat-title" style="color:#1DB954;">ACHETER DES BILLETS</div>
+        <div class="cat-desc">Billets journée dès $30.99 — abonnements d'été disponibles.</div>
+        <div class="cat-arrow">→</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EVENTS ── -->
+  <div class="screen" id="screen-events">
+    <div class="page-header">
+      <h2>ÉVÉNEMENTS</h2>
+      <button class="back-btn" onclick="switchTab('home')">← Accueil</button>
+    </div>
+    <div class="filter-row">
+      <div class="filter-pill active">Tous</div>
+      <div class="filter-pill">Hip-Hop</div>
+      <div class="filter-pill">Rock</div>
+      <div class="filter-pill">Pop</div>
+      <div class="filter-pill">Jazz</div>
+      <div class="filter-pill">Country</div>
+    </div>
+    <div class="events-list">
+      <div class="events-grid">
+
+        <div class="event-card">
+          <div class="event-date">10 MAI · 20H</div>
+          <div class="event-title">NUIT SUMMER BEATS</div>
+          <div class="event-desc">Toutes les zones ouvertes en soirée avec artistes live dans chaque quartier.</div>
+          <div class="event-tags">
+            <span class="event-tag" style="background:#ff6b00;">Hip-Hop</span>
+            <span class="event-tag" style="background:#9b59b6;">Jazz</span>
+          </div>
+        </div>
+
+        <div class="event-card" style="border-left-color:#ff3333;">
+          <div class="event-date" style="color:#ff3333;">17 MAI · 19H</div>
+          <div class="event-title">ROCK THUNDER WEEKEND</div>
+          <div class="event-desc">Soirée spéciale sur Thunderstruck avec éclairages de concert et DJ set rock.</div>
+          <div class="event-tags">
+            <span class="event-tag" style="background:#ff3333;">Rock</span>
+          </div>
+        </div>
+
+        <div class="event-card" style="border-left-color:#ff1a8c;">
+          <div class="event-date" style="color:#ff1a8c;">24 MAI · 18H</div>
+          <div class="event-title">POP AFTER DARK</div>
+          <div class="event-desc">DJ set à la Cabine DJ + heures prolongées dans la zone Pop jusqu'à minuit.</div>
+          <div class="event-tags">
+            <span class="event-tag" style="background:#ff1a8c;">Pop</span>
+          </div>
+        </div>
+
+        <div class="event-card" style="border-left-color:#9b59b6;">
+          <div class="event-date" style="color:#9b59b6;">1 JUIN · 17H</div>
+          <div class="event-title">JAZZ SOUS LES ÉTOILES</div>
+          <div class="event-desc">Soirée New Orleans avec jazz live dans la cour du Take5 Fast Food.</div>
+          <div class="event-tags">
+            <span class="event-tag" style="background:#9b59b6;">Jazz</span>
+          </div>
+        </div>
+
+        <div class="event-card" style="border-left-color:#f0c040;">
+          <div class="event-date" style="color:#f0c040;">7 JUIN · 16H</div>
+          <div class="event-title">JOURNÉE FOIRE COUNTRY</div>
+          <div class="event-desc">Spectacles de rodéo, danse country et dégustation gratuite au Till You Can't.</div>
+          <div class="event-tags">
+            <span class="event-tag" style="background:#f0c040; color:#000;">Country</span>
+          </div>
+        </div>
+
+        <div class="event-card" style="border-left-color:#ff6b00;">
+          <div class="event-date" style="color:#ff6b00;">14 JUIN · 21H</div>
+          <div class="event-title">NUIT FREESTYLE HIP-HOP</div>
+          <div class="event-desc">Karaoké freestyle, battles de rap et session d'enregistrement au studio du parc.</div>
+          <div class="event-tags">
+            <span class="event-tag" style="background:#ff6b00;">Hip-Hop</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DEALS ── -->
+  <div class="screen" id="screen-deals">
+    <div class="page-header">
+      <h2>OFFRES &amp; BILLETS</h2>
+      <button class="back-btn" onclick="switchTab('home')">← Accueil</button>
+    </div>
+    <div class="deals-content">
+
+      <div class="deal-section-title">BILLET À LA JOURNÉE</div>
+      <div class="extra-card" style="background:#0d1f0d; border:1px solid #1DB954; border-radius:14px; margin-bottom:8px;">
+        <div class="extra-info">
+          <h4>BILLET JOURNÉE</h4>
+          <p>Accès complet au parc, aux 5 zones musicales et aux 34 attractions</p>
+        </div>
+        <div class="extra-price">
+          $30.99
+          <span style="font-size:11px; color:#888; font-family:'DM Sans',sans-serif; font-weight:400; display:block; text-align:right;">par personne</span>
+        </div>
+      </div>
+
+      <div class="deal-section-title">ABONNEMENTS D'ÉTÉ</div>
+      <div class="pass-grid">
+        <div class="pass-card" style="background:#111;">
+          <h4 style="color:#1DB954;">ABONNEMENT VERT</h4>
+          <div class="pass-price">$110</div>
+          <div class="pass-desc">Accès illimité · Toutes les 5 zones · Toutes les attractions incluses</div>
+          <button class="btn-green">CHOISIR VERT</button>
+        </div>
+        <div class="pass-card" style="background:#0d1f0d; border:1px solid #1DB954;">
+          <span class="popular-badge">⭐ LE PLUS POPULAIRE</span>
+          <h4 style="color:#1DB954;">ABONNEMENT ARGENT</h4>
+          <div class="pass-price">$168</div>
+          <div class="pass-desc">Tout Vert + Casino · Crée ta chanson · Accès Southern Comfort</div>
+          <button class="btn-green">CHOISIR ARGENT</button>
+        </div>
+        <div class="pass-card" style="background:#1a1400; border:1px solid #f0c040;">
+          <h4 style="color:#f0c040;">ABONNEMENT OR</h4>
+          <div class="pass-price">$229</div>
+          <div class="pass-desc">Tout Argent + VIP · 2 coupe-files · 20% resto · Amener un ami · Buffet · Parking gratuit</div>
+          <button class="btn-outline-gold">CHOISIR OR</button>
+        </div>
+      </div>
+
+      <div class="deal-section-title">OPTIONS &amp; EXTRAS</div>
+      <div class="extras-grid">
+        <div class="extra-card">
+          <div class="extra-info"><h4>⚡ COUPE-FILE</h4><p>Accès prioritaire à toutes les attractions</p></div>
+          <div class="extra-price">$24.99</div>
+        </div>
+        <div class="extra-card">
+          <div class="extra-info"><h4>🍖 BUFFET À VOLONTÉ</h4><p>Accès illimité au Till You Can't</p></div>
+          <div class="extra-price">$30.25</div>
+        </div>
+        <div class="extra-card">
+          <div class="extra-info"><h4>🎰 ACCÈS CASINO</h4><p>Entrée au Casino Central</p></div>
+          <div class="extra-price">$4.99</div>
+        </div>
+        <div class="extra-card">
+          <div class="extra-info"><h4>🎵 CRÉE TA CHANSON</h4><p>Session en studio professionnel</p></div>
+          <div class="extra-price">$17.50</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── MAP ── -->
+  <div class="screen" id="screen-map">
+    <div class="page-header">
+      <h2>PLAN DU PARC</h2>
+      <button class="back-btn" onclick="switchTab('home')">← Accueil</button>
+    </div>
+    <div class="map-content">
+      <div class="map-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#ff6b00;"></div>Hip-Hop</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ff3333;"></div>Rock</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ff1a8c;"></div>Pop</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#9b59b6;"></div>Jazz</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#f0c040;"></div>Country</div>
+      </div>
+      <div class="map-container">
+        <div class="map-zones">
+
+          <div class="map-zone" style="background:#2a1500; border-color:#ff6b00;">
+            <div style="font-size:18px;">🎤</div>
+            <h4 style="color:#ff6b00;">HIP-HOP</h4>
+            <p>Vomit on a Sweater Already<br>Drop It Like It's Hot<br>Spin It · Karaoké Freestyle<br>🍝 Mom's Spaghetti</p>
+          </div>
+
+          <div class="map-zone map-centre-col" style="background:transparent; border:none;">
+            <div class="map-centre"><span>PLACE<br>CENTRALE<br>🎰</span></div>
+          </div>
+
+          <div class="map-zone" style="background:#2a0000; border-color:#ff3333;">
+            <div style="font-size:18px;">🎸</div>
+            <h4 style="color:#ff3333;">ROCK</h4>
+            <p>Thunderstruck<br>Boom Karaoké<br>🍣 Rock &amp; Roll Sushi</p>
+          </div>
+
+          <div class="map-zone" style="background:#1a0030; border-color:#9b59b6;">
+            <div style="font-size:18px;">🎷</div>
+            <h4 style="color:#9b59b6;">JAZZ</h4>
+            <p>Brass Blast · Base After Base<br>Flying to the Moon<br>🍟 Take5 Fast Food</p>
+          </div>
+
+          <div class="map-zone" style="background:#2a0020; border-color:#ff1a8c; grid-column:2;">
+            <div style="font-size:18px;">⭐</div>
+            <h4 style="color:#ff1a8c;">POP</h4>
+            <p>Out of the Ordinary<br>The Great Divide · Diamonds in the Sky<br>🎧 Cabine DJ · ☕ Espresso</p>
+          </div>
+
+          <div class="map-zone" style="background:#1a1500; border-color:#f0c040;">
+            <div style="font-size:18px;">🤠</div>
+            <h4 style="color:#f0c040;">COUNTRY</h4>
+            <p>Old Town Road · Merry Go Round<br>Équitation · Chant Country<br>🍗 Till You Can't</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MOBILE BOTTOM NAV ── -->
+  <nav class="bottom-nav">
+    <div class="bottom-nav-inner">
+      <div class="bnav-item active" id="bnav-home" onclick="switchTab('home')">
+        <div class="bnav-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="#1DB954" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="bnav-label" style="color:#1DB954;">Accueil</span>
+        <div class="bnav-dot"></div>
+      </div>
+      <div class="bnav-item" id="bnav-events" onclick="switchTab('events')">
+        <div class="bnav-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="4" width="18" height="18" rx="2" stroke="#555" stroke-width="2"/>
+            <line x1="16" y1="2" x2="16" y2="6" stroke="#555" stroke-width="2"/>
+            <line x1="8" y1="2" x2="8" y2="6" stroke="#555" stroke-width="2"/>
+            <line x1="3" y1="10" x2="21" y2="10" stroke="#555" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="bnav-label">Événements</span>
+      </div>
+      <div class="bnav-item" id="bnav-deals" onclick="switchTab('deals')">
+        <div class="bnav-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" stroke="#555" stroke-width="2"/>
+            <circle cx="7" cy="7" r="1.5" fill="#555"/>
+          </svg>
+        </div>
+        <span class="bnav-label">Offres</span>
+      </div>
+      <div class="bnav-item" id="bnav-map" onclick="switchTab('map')">
+        <div class="bnav-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" stroke="#555" stroke-width="2"/>
+            <line x1="8" y1="2" x2="8" y2="18" stroke="#555" stroke-width="2"/>
+            <line x1="16" y1="6" x2="16" y2="22" stroke="#555" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="bnav-label">Plan</span>
+      </div>
+    </div>
+  </nav>
+
+</div><!-- end .app -->
+
+<script src="script.js"></script>
+</body>
+</html>

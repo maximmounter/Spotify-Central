@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── APP SHELL ── */
+.app {
+  background: #0a0a0a;
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.app-bg {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 0%, #1a3a1a 0%, #0a0a0a 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── SCREENS ── */
+.screen {
+  display: none;
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.screen.visible {
+  display: block;
+}
+
+/* ── BOTTOM NAV (mobile) ── */
+.bottom-nav {
+  display: none;
+  background: #0d0d0d;
+  border-top: 1px solid #1a1a1a;
+  padding: 8px 0 12px;
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.bottom-nav-inner {
+  display: flex;
+}
+
+.bnav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.bnav-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bnav-label {
+  font-size: 9px;
+  color: #555;
+}
+
+.bnav-item.active .bnav-label {
+  color: #1DB954;
+}
+
+.bnav-dot {
+  width: 16px;
+  height: 3px;
+  border-radius: 2px;
+  background: #1DB954;
+  margin-top: 2px;
+}
+
+/* ── HOME ── */
+.home-hero {
+  padding: 50px 40px 30px;
+}
+
+.home-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #1a2e1a;
+  border: 1px solid #1DB954;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 10px;
+  color: #1DB954;
+  margin-bottom: 16px;
+}
+
+.home-tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1DB954;
+}
+
+.home-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 9vw, 100px);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.home-title span {
+  color: #1DB954;
+}
+
+.home-desc {
+  font-size: 13px;
+  color: #888;
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+.home-cats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  width: 100%;
+  padding: 30px 40px 50px;
+}
+
+.cat-card {
+  border-radius: 18px;
+  padding: 28px 20px;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+  border: 1.5px solid #222;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.cat-card:hover {
+  transform: translateY(-4px);
+  border-color: #1DB954;
+}
+
+.cat-card.green-card {
+  background: #0d1f0d;
+  border-color: #1DB954;
+}
+
+.cat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.cat-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.cat-desc {
+  font-size: 10px;
+  color: #888;
+  line-height: 1.5;
+}
+
+.cat-arrow {
+  font-size: 18px;
+  color: #1DB954;
+  margin-top: auto;
+}
+
+/* ── PAGE HEADER ── */
+.page-header {
+  padding: 28px 40px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.back-btn {
+  font-size: 10px;
+  color: #1DB954;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── EVENTS ── */
+.filter-row {
+  display: flex;
+  gap: 6px;
+  padding: 0 40px 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 10px;
+  color: #888;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.filter-pill.active {
+  background: #1DB954;
+  border-color: #1DB954;
+  color: #000;
+  font-weight: 700;
+}
+
+.events-list {
+  padding: 0 40px 30px;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.event-card {
+  background: #111;
+  border-radius: 14px;
+  padding: 14px 16px;
+  border-left: 3px solid #1DB954;
+}
+
+.event-date {
+  font-size: 9px;
+  color: #1DB954;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.event-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  margin: 3px 0;
+}
+
+.event-desc {
+  font-size: 10px;
+  color: #888;
+  line-height: 1.5;
+}
+
+.event-tags {
+  display: flex;
+  gap: 5px;
+  margin-top: 7px;
+  flex-wrap: wrap;
+}
+
+.event-tag {
+  font-size: 8px;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* ── DEALS ── */
+.deals-content {
+  padding: 0 40px 30px;
+}
+
+.deal-section-title {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #1DB954;
+  font-weight: 700;
+  margin: 18px 0 10px;
+}
+
+.pass-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.pass-card {
+  border-radius: 14px;
+  padding: 16px;
+  position: relative;
+  border: 1px solid #222;
+}
+
+.pass-card h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.pass-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  color: #fff;
+}
+
+.pass-desc {
+  font-size: 9px;
+  color: #888;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.popular-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #1DB954;
+  color: #000;
+  font-size: 7px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.extras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.extra-card {
+  background: #111;
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.extra-info h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.extra-info p {
+  font-size: 9px;
+  color: #888;
+  max-width: 160px;
+}
+
+.extra-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  color: #1DB954;
+  white-space: nowrap;
+}
+
+.btn-green {
+  background: #1DB954;
+  color: #000;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: #f0c040;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  border: 1.5px solid #f0c040;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* ── MAP ── */
+.map-content {
+  padding: 20px 40px 30px;
+}
+
+.map-legend {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  color: #888;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.map-container {
+  background: #111;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.map-zones {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.map-zone {
+  border-radius: 12px;
+  padding: 12px;
+  border-width: 1.5px;
+  border-style: solid;
+}
+
+.map-zone h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  margin: 5px 0 4px;
+}
+
+.map-zone p {
+  font-size: 9px;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+.map-centre-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-centre {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  border: 2px solid #1DB954;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-centre span {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 10px;
+  color: #1DB954;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .bottom-nav { display: block; }
+  .home-hero { padding: 36px 16px 20px; }
+  .home-cats { grid-template-columns: 1fr 1fr; padding: 16px 16px 36px; }
+  .page-header, .filter-row, .events-list, .deals-content, .map-content { padding-left: 16px; padding-right: 16px; }
+  .events-grid { grid-template-columns: 1fr; }
+  .pass-grid { grid-template-columns: 1fr; }
+  .extras-grid { grid-template-columns: 1fr; }
+  .map-zones { grid-template-columns: 1fr 1fr; }
+  .map-centre-col { display: none; }
+}
