@@ -1,8 +1,7 @@
 const GREEN = '#1DB954';
 
 function switchTab(tab) {
-  // Hide all screens and deactivate all nav items
-  ['home', 'events', 'deals', 'tickets', 'map'].forEach(function (t) {
+  ['home', 'events', 'deals', 'map'].forEach(function (t) {
     document.getElementById('screen-' + t).classList.remove('visible');
 
     const bn = document.getElementById('bnav-' + t);
@@ -18,7 +17,6 @@ function switchTab(tab) {
     }
   });
 
-  // Show selected screen and activate its nav item
   document.getElementById('screen-' + tab).classList.add('visible');
 
   const abn = document.getElementById('bnav-' + tab);
@@ -37,7 +35,6 @@ function switchTab(tab) {
   }
 }
 
-// Filter pills
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.filter-pill').forEach(function (p) {
     p.addEventListener('click', function () {
