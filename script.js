@@ -2,7 +2,7 @@ const GREEN = '#1DB954';
 
 function switchTab(tab) {
   // Hide all screens and deactivate all nav items
-  ['home', 'events', 'deals', 'map'].forEach(function (t) {
+  ['home', 'events', 'deals', 'tickets', 'map'].forEach(function (t) {
     document.getElementById('screen-' + t).classList.remove('visible');
 
     const bn = document.getElementById('bnav-' + t);

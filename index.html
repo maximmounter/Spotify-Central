@@ -37,7 +37,7 @@
         <div class="cat-desc">Explorez les 5 zones musicales, attractions, restaurants et services.</div>
         <div class="cat-arrow" style="color:#4da6ff;">→</div>
       </div>
-      <div class="cat-card green-card" onclick="switchTab('deals')">
+
         <div class="cat-icon" style="background:#1DB954;">🎟️</div>
         <div class="cat-title" style="color:#1DB954;">ACHETER DES BILLETS</div>
         <div class="cat-desc">Billets journée dès $30.99 — abonnements d'été disponibles.</div>
@@ -122,10 +122,59 @@
     </div>
   </div>
 
-  <!-- ── DEALS ── -->
+  <!-- ── DEALS (Offres — 2 discounted tickets only) ── -->
   <div class="screen" id="screen-deals">
     <div class="page-header">
-      <h2>OFFRES &amp; BILLETS</h2>
+      <h2>OFFRES</h2>
+      <button class="back-btn" onclick="switchTab('home')">← Accueil</button>
+    </div>
+    <div class="deals-content">
+
+      <div class="deal-section-title">🔥 OFFRES LIMITÉES</div>
+      <div class="discount-grid">
+
+        <div class="discount-card">
+          <div class="discount-badge">-20%</div>
+          <div class="discount-top">
+            <h4 style="color:#1DB954;">BILLET JOURNÉE</h4>
+            <div class="discount-prices">
+              <span class="old-price">$30.99</span>
+              <span class="new-price">$24.99</span>
+            </div>
+          </div>
+          <p class="pass-desc">Accès complet au parc, aux 5 zones musicales et aux 34 attractions</p>
+          <div class="discount-expires">⏰ Expire le 31 mai</div>
+          <button class="btn-green">ACHETER MAINTENANT</button>
+        </div>
+
+        <div class="discount-card" style="background:#0d1f0d; border-color:#1DB954;">
+          <div class="discount-badge" style="background:#ff6b00;">-15%</div>
+          <div class="discount-top">
+            <h4 style="color:#1DB954;">ABONNEMENT ARGENT</h4>
+            <div class="discount-prices">
+              <span class="old-price">$168</span>
+              <span class="new-price">$142.80</span>
+            </div>
+          </div>
+          <p class="pass-desc">Accès illimité + Casino · Crée ta chanson · Accès Southern Comfort</p>
+          <div class="discount-expires">⏰ Expire le 15 juin</div>
+          <button class="btn-green">ACHETER MAINTENANT</button>
+        </div>
+
+      </div>
+
+      <div style="margin-top:28px; text-align:center;">
+        <p style="font-size:11px; color:#555; margin-bottom:10px;">Voir tous les billets et abonnements disponibles</p>
+        <button class="btn-all-tickets" onclick="switchTab('tickets')">VOIR TOUS LES BILLETS →</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── TICKETS (full listing) ── -->
+  <div class="screen" id="screen-tickets">
+    <div class="page-header">
+      <h2>ACHETER DES BILLETS</h2>
       <button class="back-btn" onclick="switchTab('home')">← Accueil</button>
     </div>
     <div class="deals-content">

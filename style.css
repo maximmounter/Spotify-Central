@@ -410,6 +410,83 @@
   margin-top: 12px;
 }
 
+/* ── DISCOUNT CARDS ── */
+.discount-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.discount-card {
+  background: #111;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1.5px solid #333;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.discount-badge {
+  position: absolute;
+  top: -10px;
+  left: 18px;
+  background: #1DB954;
+  color: #000;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 2px 12px;
+  border-radius: 20px;
+}
+
+.discount-top {
+  margin-top: 10px;
+}
+
+.discount-prices {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.old-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  color: #555;
+  text-decoration: line-through;
+}
+
+.new-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 34px;
+  color: #fff;
+}
+
+.discount-expires {
+  font-size: 9px;
+  color: #ff6b00;
+  letter-spacing: 1px;
+}
+
+.btn-all-tickets {
+  background: transparent;
+  color: #1DB954;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border: 1.5px solid #1DB954;
+  border-radius: 25px;
+  padding: 10px 28px;
+  cursor: pointer;
+}
+
+.btn-all-tickets:hover {
+  background: #1a2e1a;
+}
+
 /* ── MAP ── */
 .map-content {
   padding: 20px 40px 30px;
