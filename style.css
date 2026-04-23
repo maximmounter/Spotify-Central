@@ -128,7 +128,7 @@
 
 /* ── PAGE HEADER ── */
 .page-header {
-  padding: 28px 40px 14px;
+  padding: 18px 40px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -149,7 +149,7 @@
 .filter-row {
   display: flex;
   gap: 6px;
-  padding: 0 40px 16px;
+  padding: 0 40px 10px;
   overflow-x: auto;
   scrollbar-width: none;
   flex-wrap: wrap;
@@ -168,19 +168,19 @@
 
 .filter-pill.active { background: #1DB954; border-color: #1DB954; color: #000; font-weight: 700; }
 
-.events-list { padding: 0 40px 30px; }
+.events-list { padding: 0 40px 20px; }
 
 .events-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
-.event-card { background: #111; border-radius: 14px; padding: 14px 16px; border-left: 3px solid #1DB954; }
+.event-card { background: #111; border-radius: 14px; padding: 12px 14px; border-left: 3px solid #1DB954; }
 .event-date { font-size: 9px; color: #1DB954; font-weight: 700; letter-spacing: 1px; }
-.event-title { font-family: 'Bebas Neue', sans-serif; font-size: 18px; margin: 3px 0; }
-.event-desc { font-size: 10px; color: #888; line-height: 1.5; }
-.event-tags { display: flex; gap: 5px; margin-top: 7px; flex-wrap: wrap; }
+.event-title { font-family: 'Bebas Neue', sans-serif; font-size: 16px; margin: 2px 0; }
+.event-desc { font-size: 9px; color: #888; line-height: 1.4; }
+.event-tags { display: flex; gap: 5px; margin-top: 6px; flex-wrap: wrap; }
 .event-tag { font-size: 8px; color: #fff; padding: 2px 8px; border-radius: 10px; }
 
 /* ── DEALS ── */
@@ -321,7 +321,7 @@
   .home-hero { padding: 36px 16px 20px; }
   .home-cats { grid-template-columns: 1fr 1fr; padding: 16px 16px 36px; }
   .page-header, .filter-row, .events-list, .deals-content, .map-content { padding-left: 16px; padding-right: 16px; }
-  .events-grid { grid-template-columns: 1fr; }
+  .events-grid { grid-template-columns: 1fr 1fr; }
   .pass-grid { grid-template-columns: 1fr; }
   .extras-grid { grid-template-columns: 1fr; }
   .map-zones { grid-template-columns: 1fr 1fr; }
